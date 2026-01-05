@@ -17,6 +17,11 @@
     --bg-light: #F5F5F5;
     --white: #FFFFFF;
     --gradient: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+    --gradient-hover: linear-gradient(135deg, #4CAF50 0%, #42A5F5 100%);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -37,10 +42,38 @@ body {
 .hero {
     background: var(--gradient);
     color: var(--white);
-    padding: 100px 0;
+    padding: 120px 0 150px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
 }
 
 .hero::before {
@@ -53,11 +86,90 @@ body {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
     background-size: cover;
     opacity: 0.3;
+    animation: wave 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50px);
+    }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    animation: shine 10s linear infinite;
+    z-index: 0;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
 }
 
 .hero .container {
     position: relative;
     z-index: 1;
+    width: 100%;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
 }
 
 .logo-hero {
@@ -65,6 +177,48 @@ body {
     height: auto;
     margin-bottom: 30px;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.logo-hero:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.animate-fade-in-delay-3 {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
@@ -96,14 +250,38 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(46, 125, 50, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     background: var(--bg-light);
+}
+
+.cta-button:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 .hero-buttons {
@@ -306,12 +484,29 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gradient);
+    transition: height 0.4s ease;
+}
+
+.content-card:hover::before {
+    height: 100%;
 }
 
 .content-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .content-card h3 {
@@ -383,6 +578,45 @@ body {
     background: var(--white);
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.solution-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.solution-description {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(46, 125, 50, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 .notebook-intro h3 {
@@ -549,17 +783,41 @@ body {
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-item:hover::after {
+    opacity: 1;
 }
 
 .benefit-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.2) rotate(5deg);
 }
 
 .benefit-icon {
     font-size: 3rem;
     margin-bottom: 15px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
 }
 
 .benefit-item h3 {
@@ -633,6 +891,30 @@ body {
     border-radius: 15px;
     border-right: 4px solid var(--primary-green);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.workshop-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gradient);
+    transition: height 0.4s ease;
+}
+
+.workshop-item:hover::before {
+    height: 100%;
+}
+
+.workshop-item:hover {
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    border-right-width: 6px;
 }
 
 .workshop-item h3 {
@@ -716,13 +998,162 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-family: 'Assistant', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.submit-button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: var(--gradient-hover);
+}
+
+.submit-button:active {
+    transform: translateY(-1px);
+}
+
+/* WhatsApp Button */
+.contact-alternative {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-alternative-text {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.whatsapp-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.whatsapp-button:hover {
+    background: #20BA5A;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.whatsapp-button svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.whatsapp-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: float-whatsapp 3s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    background: #20BA5A;
+}
+
+.whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+}
+
+@keyframes float-whatsapp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 /* Footer */
@@ -825,7 +1256,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Animation */
+/* Enhanced Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -841,5 +1272,121 @@ html {
 .benefit-item,
 .workshop-item {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* Section visibility animation */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero section should be visible immediately */
+.hero {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Parallax effect for sections */
+.content-section,
+.about-section,
+.guide-section {
+    position: relative;
+}
+
+/* Enhanced button animations */
+.details-link,
+.details-link-small,
+.details-link-inline,
+.details-button,
+.workshop-button {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.details-link::before,
+.details-link-small::before,
+.details-link-inline::before,
+.details-button::before,
+.workshop-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.details-link:hover::before,
+.details-link-small:hover::before,
+.details-link-inline:hover::before,
+.details-button:hover::before,
+.workshop-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Glow effect on hover for gradient buttons */
+.details-button:hover,
+.workshop-button:hover {
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4), 0 0 20px rgba(46, 125, 50, 0.2);
+}
+
+/* Enhanced form inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1), 0 4px 12px rgba(46, 125, 50, 0.15);
+    transform: translateY(-2px);
+}
+
+.form-group input,
+.form-group textarea {
+    transition: all 0.3s ease;
+}
+
+/* Testimonial enhancement */
+.testimonial-content {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-content:hover {
+    transform: scale(1.02);
+}
+
+/* FAQ item enhancement */
+.faq-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Image hover effects */
+.about-image img,
+.example-image,
+.guide-text-image {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img:hover,
+.example-image:hover,
+.guide-text-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
 }
 

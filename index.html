@@ -7,105 +7,168 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background-animation"></div>
         <div class="container">
-            <img src="סבא AI.png" alt="סבא AI Logo" class="logo-hero">
-            <h1 class="hero-title">המהפכה השקטה בכיתה</h1>
-            <p class="hero-subtitle">איך NotebookLM הופך כל מורה למעצב סביבות למידה חכמות</p>
-            <p class="hero-credit">סדנה מעשית בהנחיית משה מאיר, 'סבא AI'</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="cta-button">בואו נתחיל את המהפכה</a>
-                <a href="https://bit.ly/סדנא_פרטים" target="_blank" class="details-link">לפירוט תוכנית הסדנא</a>
+            <div class="hero-content">
+                <img src="סבא AI.png" alt="סבא AI" class="logo-hero">
+                <h1 class="hero-title animate-fade-in">המהפכה השקטה בכיתה</h1>
+                <p class="hero-subtitle animate-fade-in-delay">איך NotebookLM הופך כל מורה למעצב סביבות למידה חכמות</p>
+                <p class="hero-credit animate-fade-in-delay-2">סדנה מעשית בהנחיית משה מאיר, 'סבא AI'</p>
+                <div class="hero-buttons animate-fade-in-delay-3">
+                    <a href="#contact" class="cta-button">הרשמה לסדנה</a>
+                    <a href="#about" class="details-link">למידע נוסף</a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
+    <section id="about" class="about-section">
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
                     <img src="משה מאיר.jpg" alt="משה מאיר">
                 </div>
                 <div class="about-text">
-                    <h2>משה מאיר, 'סבא AI'</h2>
-                    <p>מנחה סדנאות מעשיות להדרכת צוותי מורים בשימוש ב-AI עם דגש על NotebookLM. המטרה: להפוך כל מורה למעצב סביבות למידה חכמות, להביא את המהפכה השקטה לכיתות שלכם ולהפוך את ההוראה ליעילה יותר, מעניינת יותר ומותאמת אישית לכל תלמיד.</p>
+                    <h2>מי אנחנו?</h2>
+                    <p>ברוכים הבאים למהפכה החינוכית של המאה ה-21. אנחנו ב'סבא AI' מאמינים שטכנולוגיה צריכה לשרת את החינוך, לא להחליף אותו. הסדנה שלנו מציעה למורים כלים מעשיים להפוך את הכיתה למקום של למידה משמעותית ומותאמת אישית.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet the Guide Section -->
-    <section class="guide-section">
-        <div class="container">
-            <h2 class="guide-title">הכר את המדריך</h2>
-            <div class="guide-content">
-                <div class="guide-image-wrapper">
-                    <img src="טקסט מדריך.jpg" alt="הכר את המדריך" class="guide-text-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
-
-    <!-- Problem and Opportunity Section -->
+    <!-- Challenge & Opportunity Section -->
     <section class="content-section">
         <div class="container">
-            <h2>הבעיה וההזדמנות</h2>
+            <h2>האתגר וההזדמנות</h2>
             <div class="content-grid">
                 <div class="content-card challenge-card">
-                    <h3>האתגר</h3>
+                    <h3>האתגרים</h3>
                     <ul class="challenge-list">
-                        <li>עומס מידע</li>
-                        <li>הסחות דעת</li>
+                        <li>עומס מידע עצום</li>
+                        <li>הסחות דעת מתמידות</li>
                         <li>הצורך בהוראה מותאמת אישית</li>
                         <li>החשש שבינה מלאכותית תשמש רק להעתקות</li>
                     </ul>
                 </div>
                 <div class="content-card opportunity-card">
                     <h3>השינוי</h3>
-                    <p>במקום לפחד מהטכנולוגיה – רותמים אותה להעמקת הלמידה ולחיזוק החשיבה הביקורתית.</p>
-                    <p><strong>עוברים מניהול מידע ליצירת ידע.</strong></p>
+                    <p>במקום לפחד מהטכנולוגיה – רותמים אותה להעמקת הלמידה ולחיזוק החשיבה הביקורתית. עוברים מניהול מידע ליצירת ידע. הופכים את הבינה המלאכותית לשותפה אסטרטגית בתהליך החינוכי.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
-
-    <!-- Solution: NotebookLM Section -->
+    <!-- Solution Section -->
     <section class="content-section alt-bg">
         <div class="container">
             <h2>הפתרון: הכירו את NotebookLM</h2>
-            <div class="notebook-intro">
-                <h3>"החברותא הדיגיטלית" שלכם</h3>
-                <p>כלי המבוסס על "עיגון במקורות" (Source-Grounding) - כל התשובות מבוססות על החומרים שלכם בלבד.</p>
+            <div class="solution-intro">
+                <p class="solution-description">"החברותא הדיגיטלית" שלכם. כלי המבוסס על "עיגון במקורות" (Source-Grounding) שמשנה את כללי המשחק בחינוך.</p>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">✅</div>
+                    <div class="benefit-icon">🎯</div>
                     <h3>אפס הזיות</h3>
-                    <p>התשובות מבוססות 100% על החומר שלכם. אין המצאות או תשובות לא רלוונטיות.</p>
+                    <p>התשובות מבוססות 100% על החומר שלכם. אין מקום לטעויות או המצאות.</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">🔒</div>
                     <h3>סביבה בטוחה</h3>
-                    <p>הנתונים פרטיים ואינם חשופים למודל הכללי. כל המידע נשאר שלכם.</p>
+                    <p>הנתונים פרטיים ואינם חשופים למודל הכללי. אתם שולטים במידע שלכם.</p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">🎨</div>
                     <h3>סטודיו ליצירה</h3>
-                    <p>יצירת סיכומים, שאלות נפוצות, צירי זמן, מפות חשיבה ופודקאסטים (סקירה קולית) בלחיצת כפתור.</p>
+                    <p>יצירת סיכומים, שאלות נפוצות, צירי זמן, מפות חשיבה ופודקאסטים בלחיצת כפתור.</p>
                 </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>חיסכון בזמן</h3>
+                    <p>ייצור חומרי למידה איכותיים בזמן קצר. יותר זמן להתמקד בתלמידים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Religious Studies Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>התאמה למקצועות הקודש</h2>
+            <div class="notebook-intro">
+                <h3>בית מדרש דיגיטלי פרטי</h3>
+                <p>NotebookLM מתאים במיוחד להוראת מקצועות הקודש. יצירת סביבת למידה דיגיטלית שמשמרת את רוח הלימוד המסורתי תוך שימוש בכלים מודרניים.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>שיעורי גמרא</h3>
+                    <p>זיהוי מבנה הסוגיא, הבנת הקשרים בין המקורות, וניתוח מעמיק של הדיונים התלמודיים.</p>
+                </div>
+                <div class="content-card">
+                    <h3>תנ"ך</h3>
+                    <p>השוואת פרשנים, ניתוח טקסטואלי מעמיק, ויצירת חיבורים בין פרשיות שונות.</p>
+                </div>
+                <div class="content-card">
+                    <h3>מחשבת ישראל</h3>
+                    <p>יצירת קשרים בין הוגים שונים, הבנת התפתחות הרעיונות, וניתוח פילוסופי מעמיק.</p>
+                </div>
+                <div class="content-card result-item">
+                    <h3>ייבוא מ-Sefaria</h3>
+                    <p>אפשרות לייבא דפי מקורות ישירות מ-Sefaria, מה שמקל על יצירת מחברות מקורות עשירות ומדויקות.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="guide-title">מדריך מעשי</h2>
+            <div class="guide-content">
+                <div class="guide-image-wrapper">
+                    <img src="טקסט מדריך.jpg" alt="מדריך NotebookLM" class="guide-text-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Section -->
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div class="workshop-highlight">
+                <span class="highlight-text">מה קורה בסדנה?</span>
+                <p style="font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: 20px auto; line-height: 1.8;">
+                    זוהי התנסות מעשית ולא הרצאה תיאורטית. בונים "מחברת מקורות" אישית, מתרגלים כתיבת הנחיות (פרומפטים), ויוצרים חומרי למידה כגון דפי עבודה ומערכי שיעור. התוצאה: יוצאים עם תוצרים ביד וביטחון להתחיל לעבוד מחר בבוקר.
+                </p>
+            </div>
+            <div class="workshop-details">
+                <div class="workshop-item">
+                    <h3>📚 בניית מחברת מקורות</h3>
+                    <p>לומדים כיצד ליצור ולנהל מחברת מקורות דיגיטלית אישית, עם כל הכלים הנדרשים להצלחה.</p>
+                </div>
+                <div class="workshop-item">
+                    <h3>✍️ כתיבת הנחיות</h3>
+                    <p>מתרגלים כתיבת פרומפטים יעילים שמניבים תוצאות מדויקות ואיכותיות.</p>
+                </div>
+                <div class="workshop-item">
+                    <h3>📝 יצירת חומרי למידה</h3>
+                    <p>מייצרים דפי עבודה, מערכי שיעור, וחומרי עזר נוספים בזמן קצר ובאיכות גבוהה.</p>
+                </div>
+                <div class="workshop-item">
+                    <h3>🎓 תוצרים מעשיים</h3>
+                    <p>יוצאים מהסדנה עם תוצרים מוכנים לשימוש ועם הידע להתחיל לעבוד מיד.</p>
+                </div>
+            </div>
+            <div class="workshop-details-link">
+                <a href="#contact" class="details-button">הרשמה לסדנה</a>
             </div>
         </div>
     </section>
@@ -113,138 +176,78 @@
     <!-- Example Section -->
     <section class="example-section">
         <div class="container">
-            <h2 class="example-title">דוגמא לחומר שהוכן באופן אוטומטי</h2>
+            <h2 class="example-title">דוגמה מעשית</h2>
             <div class="example-image-container">
-                <img src="דוגמא1.jpg" alt="דוגמא לחומר שהוכן באופן אוטומטי" class="example-image">
+                <img src="דוגמא1.jpg" alt="דוגמה לשימוש ב-NotebookLM" class="example-image">
             </div>
         </div>
     </section>
-
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
-
-    <!-- Religious Studies Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2>התאמה למקצועות הקודש</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <h3>בית מדרש דיגיטלי פרטי</h3>
-                    <p>יצירת סביבת למידה דיגיטלית מותאמת למקצועות הקודש, המאפשרת עבודה מעמיקה עם מקורות.</p>
-                </div>
-                <div class="content-card">
-                    <h3>שימוש במקצועות השונים</h3>
-                    <ul class="subject-list">
-                        <li><strong>גמרא:</strong> זיהוי מבנה הסוגיא</li>
-                        <li><strong>תנ"ך:</strong> השוואת פרשנים</li>
-                        <li><strong>מחשבת ישראל:</strong> ניתוח ודיון</li>
-                    </ul>
-                </div>
-                <div class="content-card">
-                    <h3>ייבוא מ-Sefaria</h3>
-                    <p>אפשרות לייבא דפי מקורות ישירות מ-Sefaria, מה שמקל על יצירת חומרי לימוד מבוססי מקורות.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
-
-    <!-- Workshop Details Section -->
-    <section class="content-section alt-bg">
-        <div class="container">
-            <h2>מה קורה בסדנה? (Hands-On)</h2>
-            <div class="workshop-highlight">
-                <p class="highlight-text">זוהי התנסות מעשית ולא הרצאה תיאורטית</p>
-                <a href="https://bit.ly/סדנא_פרטים" target="_blank" class="details-link-inline">לפירוט תוכנית הסדנא →</a>
-            </div>
-            <div class="workshop-details">
-                <div class="workshop-item">
-                    <h3>בניית מחברת מקורות אישית</h3>
-                    <p>כל משתתף בונה "מחברת מקורות" אישית עם החומרים שלו</p>
-                </div>
-                <div class="workshop-item">
-                    <h3>תרגול כתיבת הנחיות (פרומפטים)</h3>
-                    <p>למידה מעשית של כתיבת הנחיות יעילות לקבלת תוצאות מיטביות</p>
-                </div>
-                <div class="workshop-item">
-                    <h3>יצירת חומרי למידה</h3>
-                    <p>יצירת דפי עבודה ומערכי שיעור מעשיים לשימוש בכיתה</p>
-                </div>
-                <div class="workshop-item result-item">
-                    <h3>התוצאה</h3>
-                    <p><strong>יוצאים עם תוצרים ביד וביטחון להתחיל לעבוד מחר בבוקר</strong></p>
-                </div>
-            </div>
-            <div class="workshop-details-link">
-                <a href="https://bit.ly/סדנא_פרטים" target="_blank" class="details-button">לפירוט תוכנית הסדנא המלאה</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider">
-        <div class="divider-buttons">
-            <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-            <a href="https://bit.ly/סדנא_פרטים" target="_blank" class="details-link-small">לפירוט תוכנית הסדנא</a>
-        </div>
-    </div>
 
     <!-- FAQ Section -->
-    <section class="content-section">
+    <section class="content-section alt-bg">
         <div class="container">
             <h2>שאלות נפוצות</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <h3>האם צריך ידע טכני?</h3>
-                    <p><strong>ממש לא.</strong> כל מה שצריך זה חשבון גוגל ורצון ללמוד. הסדנה מתאימה לכל רמת ידע טכני.</p>
+                    <p>ממש לא! כל מה שצריך זה חשבון גוגל ורצון ללמוד. הסדנה מתאימה גם למורים ללא רקע טכנולוגי.</p>
                 </div>
                 <div class="faq-item">
                     <h3>האם זה עובד בעברית?</h3>
-                    <p><strong>בהחלט.</strong> הכלי מבוסס על Gemini Pro ובעל הבנה מעולה של עברית וארמית. ניתן לעבוד בנוחות מלאה בעברית.</p>
+                    <p>בהחלט! הכלי מבוסס על Gemini Pro ובעל הבנה מעולה של עברית וארמית, מה שהופך אותו לאידיאלי להוראת מקצועות הקודש.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>כמה זמן נמשכת הסדנה?</h3>
+                    <p>הסדנה היא מעשית ואינטנסיבית, ומבטיחה שתצאו עם תוצרים מוכנים לשימוש ועם הידע להתחיל לעבוד מיד.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>מה צריך להביא לסדנה?</h3>
+                    <p>מחשב נייד או טאבלט, חשבון גוגל פעיל, ורצון ללמוד ולהתנסות. כל השאר אנחנו מספקים!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
-
-    <!-- Testimonials Section -->
-    <section class="content-section alt-bg">
+    <!-- Testimonial Section -->
+    <section class="content-section">
         <div class="container">
-            <h2>המלצות</h2>
+            <h2>מה אומרים המשתתפים</h2>
             <div class="testimonial">
                 <div class="testimonial-content">
-                    <p class="testimonial-text">"זה פשוט משנה את כללי המשחק... היכולת לייצר כל כך הרבה חומר עזר איכותי בזמן כזה קצר היא לא פחות ממדהימה".</p>
+                    <p class="testimonial-text">
+                        "זה פשוט משנה את כללי המשחק... היכולת לייצר כל כך הרבה חומר עזר איכותי בזמן כזה קצר היא לא פחות ממדהימה. הסדנה נתנה לי כלים מעשיים שאני משתמש בהם כבר מחר בבוקר בכיתה שלי."
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <a href="#contact" class="workshop-button">להזמנת סדנא</a>
-    </div>
+    <!-- PDF Download Section -->
+    <section class="section-divider">
+        <div class="container">
+            <div class="divider-buttons">
+                <a href="המהפכה השקטה בכיתה.pdf" download class="workshop-button">הורדת חוברת מידע</a>
+                <a href="#contact" class="details-link-small">לפרטים נוספים</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>צור קשר</h2>
             <p class="contact-intro">מוכנים להתחיל את המהפכה? מלאו את הטופס ונחזור אליכם בהקדם</p>
-            <form class="contact-form" id="contactForm">
+            <form id="contactForm" class="contact-form">
                 <div class="form-group">
-                    <label for="name">שם מלא *</label>
+                    <label for="name">שם מלא</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">אימייל *</label>
+                    <label for="email">אימייל</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">טלפון *</label>
+                    <label for="phone">טלפון</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
@@ -257,6 +260,15 @@
                 </div>
                 <button type="submit" class="submit-button">שלח הודעה</button>
             </form>
+            <div class="contact-alternative">
+                <p class="contact-alternative-text">או צרו קשר ישירות:</p>
+                <a href="https://wa.me/972584810180" target="_blank" class="whatsapp-button" aria-label="צור קשר בוואטסאפ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span>שלח הודעה בוואטסאפ</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -264,17 +276,21 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <img src="סבא AI.png" alt="סבא AI Logo" class="footer-logo">
+                <img src="סבא AI.png" alt="סבא AI" class="footer-logo">
                 <div class="footer-info">
-                    <p>משה מאיר, 'סבא AI'</p>
+                    <p><strong>משה מאיר, 'סבא AI'</strong></p>
                     <p>המהפכה השקטה בכיתה</p>
-                    <p>טלפון: 054-810-1800</p>
-                    <p><a href="https://bit.ly/סדנא_פרטים" target="_blank" class="footer-link">לפירוט תוכנית הסדנא</a></p>
-                    <p>&copy; 2024 סבא AI. כל הזכויות שמורות.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/972584810180" target="_blank" class="whatsapp-float" aria-label="צור קשר בוואטסאפ">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 
     <script src="script.js"></script>
 </body>
