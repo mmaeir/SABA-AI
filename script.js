@@ -7,16 +7,27 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const school = document.getElementById('school').value;
+    const workshopType = document.getElementById('workshopType').value;
     const message = document.getElementById('message').value;
     
     // Create email subject and body
     const subject = encodeURIComponent('פנייה חדשה מאתר סבא AI');
+    // Get workshop type display name
+    const workshopTypeOptions = {
+        'zoom-private': 'בזום - פרטי',
+        'zoom-institutional': 'בזום - מוסדי',
+        'in-person-private': 'פרונטלי - פרטי',
+        'in-person-institutional': 'פרונטלי - מוסדי'
+    };
+    const workshopTypeDisplay = workshopTypeOptions[workshopType] || workshopType;
+
     const body = encodeURIComponent(
         `שלום,\n\nפנייה חדשה מהאתר:\n\n` +
         `שם: ${name}\n` +
         `אימייל: ${email}\n` +
         `טלפון: ${phone}\n` +
-        `בית ספר/מוסד: ${school || 'לא צוין'}\n\n` +
+        `בית ספר/מוסד: ${school || 'לא צוין'}\n` +
+        `סוג סדנה: ${workshopTypeDisplay}\n\n` +
         `הודעה:\n${message || 'אין הודעה'}`
     );
     
